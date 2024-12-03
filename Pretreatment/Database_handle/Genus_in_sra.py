@@ -26,6 +26,9 @@ for root, dirs, files in os.walk(bracken_save_path):
 
 all_results.index.name = 'SRA_ID'
 all_results.to_csv(os.path.join(GobleD().excel, 'Genus_in_sra.csv'))
+print(f'--------------------------'
+	  f'\nok Genus_in_sra.csv'
+	  f'\n--------------------------')
 
 if __name__ == '__main__':
 	pass
