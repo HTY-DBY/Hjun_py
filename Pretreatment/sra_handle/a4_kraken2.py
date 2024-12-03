@@ -21,7 +21,7 @@ print(f'kraken2_save_path: {kraken2_save_path}')
 not_down_sra = []
 root_count = len([d for d in os.listdir(fastq_better_save_path) if os.path.isdir(os.path.join(fastq_better_save_path, d))])
 
-i = 1
+i = 0
 for root, dirs, files in os.walk(fastq_better_save_path):
 	if root == fastq_better_save_path:
 		continue  # 跳过根目录

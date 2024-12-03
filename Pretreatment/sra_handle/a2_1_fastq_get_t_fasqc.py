@@ -53,7 +53,7 @@ for root, dirs, files in os.walk(fastq_save_path):
 	# --extract
 
 	print(f'{i + 1}/{root_count} 处理 SRA ID: {sra_id}')
-	print(f'执行命令: {cmd_fastq_get}')
+	print(f'执行命令: \n{cmd_fastq_get}')
 
 	try:
 		# 执行命令

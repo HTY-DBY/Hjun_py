@@ -70,7 +70,7 @@ for root, dirs, files in os.walk(fastq_save_path):
 		)
 
 	print(f'{i + 1}/{root_count} SRA ID: {sra_id}, 类型: {"SE" if is_se else "PE"}')
-	print(f'执行命令: {cmd_fastp}')
+	print(f'执行命令: \n{cmd_fastp}')
 
 	try:
 		# 执行命令
