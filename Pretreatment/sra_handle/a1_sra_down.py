@@ -2,16 +2,19 @@ import os
 import time
 import subprocess
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from importlib.metadata import pass_none
+
 import pandas as pd
 from Other.GobleD import GobleD
-from Other.Other_main import creat_path_In_Other_main, check_files_exist_and_non_empty_In_Other_main
+from Other.Other_main import creat_path_In_Other_main, check_files_exist_and_non_empty_In_Other_main, Send_email_In_Other_main
 
 # 配置参数
 sra_save_path = GobleD().sra_save_path
 creat_path_In_Other_main([sra_save_path])
 
+topic_main = 'sra_down'
 print(f'=========================================\n'
-	  f'Begin: sra_down')
+	  f'Begin: {topic_main}')
 print(f'sra_path: {sra_save_path}')
 
 # 读取数据
@@ -73,4 +76,9 @@ with ThreadPoolExecutor(max_threads) as executor:
 	}
 
 	for future in as_completed(futures):
-		print(future.result())
+		# print(future.result())
+		pass
+
+# 邮件提醒
+if GobleD().develop:
+	Send_email_In_Other_main(title=topic_main, txt=f'{topic_main} 完成')
