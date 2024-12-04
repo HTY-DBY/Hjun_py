@@ -2,7 +2,6 @@ import os
 import time
 import subprocess
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from importlib.metadata import pass_none
 
 import pandas as pd
 from Other.GobleD import GobleD
@@ -76,9 +75,9 @@ with ThreadPoolExecutor(max_threads) as executor:
 	}
 
 	for future in as_completed(futures):
-		# print(future.result())
-		pass
+		print(future.result())
 
 # 邮件提醒
-if GobleD().develop:
-	Send_email_In_Other_main(title=topic_main, txt=f'{topic_main} 完成')
+# Send_email_In_Other_main(title=f'topic_main 完成', txt=f'')
+if not GobleD().develop:
+	Send_email_In_Other_main(title=f'topic_main 完成', txt=f'------')

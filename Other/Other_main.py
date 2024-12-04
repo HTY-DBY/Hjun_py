@@ -28,7 +28,7 @@ def Send_email_In_Other_main(title=None, txt=None, ):
 	if title is None:
 		title = "test"
 
-	cmd = f'{GobleD().windows_python} "{GobleD().send_email_script}" -txt {txt} -title {title}'
+	cmd = f'{GobleD().windows_python} "{GobleD().send_email_script}" -txt "{txt}" -title "{title}"'
 
 	try:
 		print(f"开始 发送邮件，执行命令\n{cmd}")
