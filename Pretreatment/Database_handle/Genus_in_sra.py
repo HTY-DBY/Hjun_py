@@ -25,7 +25,7 @@ for root, dirs, files in os.walk(bracken_save_path):
 	all_results = pd.concat([all_results, bracken_result], axis=0)
 
 all_results.index.name = 'SRA_ID'
-all_results.to_csv(os.path.join(GobleD().excel, 'Genus_in_sra.csv'))
+all_results.to_csv(os.path.join(GobleD().excel_pre_save_path, 'Genus_in_sra.csv'))
 print(f'--------------------------'
 	  f'\nok Genus_in_sra.csv'
 	  f'\n--------------------------')
